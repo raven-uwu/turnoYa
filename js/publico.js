@@ -39,10 +39,47 @@ function mostrarServicios() {
   document.getElementById("listaServicios").innerHTML = html;
 }
 
+function validarRegistro(evento) {
+  let nombre = document.getElementById("nombre").value;
+  let correo = document.getElementById("correo").value;
+  let telefono = document.getElementById("telefono").value.replace("-", "");
+  let contrasena = document.getElementById("contrasena").value;
+  let confirmar = document.getElementById("confirmar").value;
+  let errores = "";
+
+  if (nombre.length < 3) {
+    errores += "<li>Escriba su nombre completo.</li>";
+  }
+  if (buscarUsuarioPorCorreo(correo) !== null) {
+    errores += "<li>Ya existe una cuenta con ese correo.</li>";
+  }
+  if (telefono.length !== 8 || isNaN(Number(telefono))) {
+    errores += "<li>El telefono debe tener 8 numeros, por ejemplo 8888-8888.</li>";
+  }
+  if (contrasena.length < 8) {
+    errores += "<li>La contrasena debe tener al menos 8 caracteres.</li>";
+  }
+  if (contrasena !== confirmar) {
+    errores += "<li>Las contrasenas no coinciden.</li>";
+  }
+  if (!document.getElementById("terminos").checked) {
+    errores += "<li>Debe aceptar las condiciones de uso.</li>";
+  }
+
+  if (errores !== "") {
+    evento.preventDefault();
+    document.getElementById("mensaje").innerHTML = alerta("danger", "<strong>Revise lo siguiente:</strong><ul>" + errores + "</ul>");
+  }
+}
+
 if (document.getElementById("resumenHoy") !== null) {
   mostrarResumenInicio();
 }
 
 if (document.getElementById("listaServicios") !== null) {
   mostrarServicios();
+}
+
+if (document.getElementById("formRegistro") !== null) {
+  document.getElementById("formRegistro").addEventListener("submit", validarRegistro);
 }
