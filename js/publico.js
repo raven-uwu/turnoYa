@@ -72,6 +72,35 @@ function validarRegistro(evento) {
   }
 }
 
+function validarLogin(evento) {
+  let correo = document.getElementById("correo").value;
+  let contrasena = document.getElementById("contrasena").value;
+  let usuario = buscarUsuarioPorCorreo(correo);
+  let error = "";
+
+  if (usuario === null) {
+    error = "No existe una cuenta con ese correo.";
+  } else if (!usuario.activo) {
+    error = "Su cuenta esta desactivada. Comuniquese con el administrador.";
+  } else if (contrasena.length < 8) {
+    error = "La contrasena debe tener al menos 8 caracteres.";
+  }
+
+  if (error !== "") {
+    evento.preventDefault();
+    document.getElementById("mensaje").innerHTML = alerta("danger", error);
+    return;
+  }
+
+  // Cada rol entra a su propio panel.
+  document.getElementById("formLogin").action = usuario.rol === "Administrador" ? "../admin/panel.php" : "../cliente/panel.php";
+}
+
+function cambiarVistaContrasena() {
+  let campo = document.getElementById("contrasena");
+  campo.type = document.getElementById("verContrasena").checked ? "text" : "password";
+}
+
 if (document.getElementById("resumenHoy") !== null) {
   mostrarResumenInicio();
 }
@@ -82,4 +111,9 @@ if (document.getElementById("listaServicios") !== null) {
 
 if (document.getElementById("formRegistro") !== null) {
   document.getElementById("formRegistro").addEventListener("submit", validarRegistro);
+}
+
+if (document.getElementById("formLogin") !== null) {
+  document.getElementById("formLogin").addEventListener("submit", validarLogin);
+  document.getElementById("verContrasena").addEventListener("change", cambiarVistaContrasena);
 }
