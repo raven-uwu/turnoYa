@@ -1,0 +1,311 @@
+body {
+  font-family: "Nunito", "Segoe UI", Arial, sans-serif;
+  background-color: #f2f7f8;
+  color: #1f3a44;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.encabezado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  background-color: #0f5c66;
+  box-shadow: 0 4px 14px rgba(15, 92, 102, 0.25);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.marca:hover {
+  color: #ffffff;
+}
+
+.marca img {
+  width: 40px;
+  height: 40px;
+}
+
+.menu-lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-enlace {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-enlace:hover,
+.menu-enlace.activo {
+  background-color: #ffffff;
+  color: #0f5c66;
+}
+
+.contenido {
+  flex: 1 0 auto;
+  padding-top: 36px;
+  padding-bottom: 48px;
+}
+
+.titulo-pagina {
+  color: #0f5c66;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.subtitulo {
+  color: #5a7480;
+  margin-bottom: 28px;
+}
+
+.texto-suave {
+  color: #5a7480;
+}
+
+.tarjeta {
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(15, 92, 102, 0.12);
+}
+
+.tarjeta .card-body {
+  padding: 24px;
+}
+
+.titulo-tarjeta {
+  color: #0f5c66;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.btn-turnoya {
+  padding: 8px 24px;
+  background-color: #14a3a3;
+  border-color: #14a3a3;
+  border-radius: 999px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.btn-turnoya:hover {
+  background-color: #0f7f80;
+  border-color: #0f7f80;
+  color: #ffffff;
+}
+
+.btn-borde {
+  padding: 6px 22px;
+  border: 2px solid #14a3a3;
+  border-radius: 999px;
+  color: #0f5c66;
+  font-weight: 700;
+}
+
+.btn-borde:hover {
+  background-color: #e0f2f2;
+  border-color: #14a3a3;
+  color: #0f5c66;
+}
+
+.formulario {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.formulario .form-label {
+  font-weight: 700;
+}
+
+.formulario [type="submit"] {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.enlace-formulario {
+  margin: 18px 0 0;
+  text-align: center;
+}
+
+.enlace-formulario a {
+  color: #0f7f80;
+  font-weight: 700;
+}
+
+.aviso-pruebas {
+  margin-top: 20px;
+  border-radius: 16px;
+}
+
+.alert ul {
+  margin: 6px 0 0;
+}
+
+.datos-servicio {
+  list-style: none;
+  margin: 16px 0;
+  padding: 0;
+}
+
+.datos-servicio li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+}
+
+.datos-servicio strong {
+  white-space: nowrap;
+}
+
+.datos-servicio li + li {
+  border-top: 1px solid #e3ecee;
+}
+
+.datos-servicio .horario {
+  display: block;
+  color: #5a7480;
+  font-size: 0.9rem;
+}
+
+.lista-ventajas {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.lista-ventajas li {
+  margin-bottom: 8px;
+}
+
+.estado {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.estado-pendiente {
+  background-color: #e6ebee;
+  color: #4a5a63;
+}
+
+.estado-espera {
+  background-color: #fff1d6;
+  color: #9a5b00;
+}
+
+.estado-atencion {
+  background-color: #dcecff;
+  color: #1d5fb4;
+}
+
+.estado-finalizado {
+  background-color: #dcf3e4;
+  color: #1d7a43;
+}
+
+.estado-cancelado {
+  background-color: #fde2e0;
+  color: #b3261e;
+}
+
+.lista-turnos > article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(15, 92, 102, 0.1);
+}
+
+.lista-turnos p {
+  margin: 0;
+}
+
+.codigo-turno {
+  color: #0f5c66;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.portada {
+  padding: 56px 28px;
+  margin-bottom: 40px;
+  background-color: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 10px 24px rgba(15, 92, 102, 0.12);
+  text-align: center;
+}
+
+.portada h1 {
+  color: #0f5c66;
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.portada p {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  color: #4a5a63;
+  font-size: 1.15rem;
+}
+
+.portada .btn {
+  margin: 4px;
+}
+
+.numero-paso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background-color: #e0f2f2;
+  color: #0f5c66;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.pie {
+  padding: 18px 16px;
+  background-color: #0f5c66;
+  color: #d7ecee;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.pie p {
+  margin: 0;
+}
