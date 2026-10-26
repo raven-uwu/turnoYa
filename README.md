@@ -6,9 +6,8 @@ Proyecto del curso SC-502 Ambiente Web Cliente Servidor, Universidad Fidélitas,
 
 ## Integrantes
 
-- Integrante 1: ____________ (parte pública)
-- Integrante 2: ____________ (módulo del cliente)
-- Integrante 3: ____________ (módulo del administrador)
+Maria Jose Araya Camacho
+
 
 ## Tecnologías
 
